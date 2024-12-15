@@ -61,7 +61,13 @@ const RESTAURANT = {
 // Tests
 
 // Routes
+app.get('/', (req, res) => {
+    res.render('home.ejs', { restaurant: RESTAURANT });
+});
 
+app.get('/menu', (req, res) => {
+    res.render('menu.ejs', { restaurant: RESTAURANT });
+});
 
 // Start the server
 app.listen(3000);
