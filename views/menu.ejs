@@ -3,9 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Menu</title>
 </head>
 <body>
-    
+    <%- include('./partials/nav') %>
+    <h1>Full Menu</h1>
+
+    <h2>Mains</h2>
+    <% restaurant.menu.forEach(item => { %>
+      <% if(item.category === 'mains') { %>
+        <div>
+          <h3><%= item.name %></h3>
+          <p>Price: <%= item.price %></p>
+          <p>Rating: <%= item.rating %></p>
+          <p>Details: <%= item.details %></p>
+        </div>
+      <% } %>
+    <% }) %>
+
+    <h2>Desserts</h2>
+    <% restaurant.menu.forEach(item => { %>
+      <% if(item.category === 'desserts') { %>
+        <div>
+          <h3><%= item.name %></h3>
+          <p>Price: <%= item.price %></p>
+          <p>Rating: <%= item.rating %></p>
+          <p>Details: <%= item.details %></p>
+        </div>
+      <% } %>
+    <% }) %>
+
+    <h2>Sides</h2>
+    <% restaurant.menu.forEach(item => { %>
+      <% if(item.category === 'sides') { %>
+        <div>
+          <h3><%= item.name %></h3>
+          <p>Price: <%= item.price %></p>
+          <p>Rating: <%= item.rating %></p>
+          <p>Details: <%= item.details %></p>
+        </div>
+      <% } %>
+    <% }) %>
 </body>
 </html>
